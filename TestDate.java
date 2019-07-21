@@ -2,7 +2,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Date;
-import java.util.Scanner; 
+import java.util.Scanner;
 
 class TestDate {
 
@@ -18,6 +18,12 @@ class TestDate {
         sc.close();
 
         // TODO : your code after this line
-        
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar calendar = new GregorianCalendar(year, month-1, day);
+        Date date = calendar.getTime();
+        System.out.println("The day of week is :" + sdf.format(date));
+
+        System.out.println("The day of week is : " + calendar.get(Calendar.DAY_OF_WEEK));
     }
 }
